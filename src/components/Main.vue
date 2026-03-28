@@ -4,6 +4,8 @@ import { ref } from 'vue'
 const paragraf1 = ref("I am incredibly small and fast! My core library is only around 30KB, so I won't slow you down.")
 const paragraf2 = ref("Easy to learn and use, even for beginners. I have a gentle learning curve, clear documentation, and a supportive community.")
 const paragraf3 = ref("I can handle everything from simple interactive elements to complex single-page applications. I'm great for small projects and large - scale applications alike.")
+
+const href = ref("https://instagram.com/nonedity")
 </script>
 
 <template>
@@ -25,6 +27,8 @@ const paragraf3 = ref("I can handle everything from simple interactive elements 
                 I'm <span class="highlight">Versatile</span>
             </h2>
             <p>{{ paragraf3 }}</p>
+
+            <a v-bind:href="href">My Instagram!</a>
         </section>
     </main>
 </template>
@@ -44,7 +48,8 @@ h2 {
     margin-bottom: 3px;
 }
 
-p {
+p,
+a {
     font-size: 0.9rem;
     color: #555;
 }
