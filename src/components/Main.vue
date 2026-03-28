@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+
+const paragraf1 = ref("I am incredibly small and fast! My core library is only around 30KB, so I won't slow you down.")
+const paragraf2 = ref("Easy to learn and use, even for beginners. I have a gentle learning curve, clear documentation, and a supportive community.")
+const paragraf3 = ref("I can handle everything from simple interactive elements to complex single-page applications. I'm great for small projects and large - scale applications alike.")
+</script>
 
 <template>
     <main>
@@ -6,28 +12,19 @@
             <h2>
                 I'm <span class="highlight">Lightweight</span>
             </h2>
-            <p>
-                I am incredibly small and fast! My core library is only around 30KB, so I won't slow you down.
-            </p>
+            <p>{{ paragraf1 }}</p>
         </section>
         <section>
             <h2>
                 I'm <span class="highlight">Approachable</span>
             </h2>
-            <p>
-                Easy to learn and use, even for beginners. I have a gentle learning curve, clear documentation, and a
-                supportive community.
-            </p>
+            <p>{{ paragraf2 }}</p>
         </section>
         <section>
             <h2>
                 I'm <span class="highlight">Versatile</span>
             </h2>
-            <p>
-                I can handle everything from simple interactive elements to complex single-page applications. I'm great
-                for
-                small projects and large-scale applications alike.
-            </p>
+            <p>{{ paragraf3 }}</p>
         </section>
     </main>
 </template>
