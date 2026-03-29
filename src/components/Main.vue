@@ -6,6 +6,7 @@ const paragraf2 = ref("Easy to learn and use, even for beginners. I have a gentl
 const paragraf3 = ref("I can handle everything from simple interactive elements to complex single-page applications. I'm great for small projects and large - scale applications alike.")
 
 const href = ref("https://instagram.com/nonedity")
+const isBtnDisabled = ref(true)
 </script>
 
 <template>
@@ -28,7 +29,10 @@ const href = ref("https://instagram.com/nonedity")
             </h2>
             <p>{{ paragraf3 }}</p>
 
-            <a v-bind:href="href">My Instagram!</a>
+            <div class="buttons">
+                <button target="__blank" :href>My Instagram!</button>
+                <button :disabled="isBtnDisabled">This is a disabled button.</button>
+            </div>
         </section>
     </main>
 </template>
@@ -48,9 +52,36 @@ h2 {
     margin-bottom: 3px;
 }
 
-p,
-a {
+p {
     font-size: 0.9rem;
     color: #555;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+button {
+    background: #34495e;
+    color: white;
+    padding: 10px;
+    border: 0;
+    font-size: 1.1rem;
+    border-radius: 0 5px 0 5px;
+    font-weight: bold;
+    margin: 15px 15px 0 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: grey;
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 </style>
